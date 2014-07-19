@@ -8,67 +8,23 @@
         <table>
   <thead>
     <tr>
-      <th width="50">Date</th>
+      <th width="150">Date</th>
       <th>Title</th>
-      <th width="200">Author</th>
-      <th width="200">Post</th>
+      <th width="100">Author</th>
+      <th width="300">Post</th>
 
     </tr>
   </thead>
   <tbody>
+
+    <% @posts.each do |post| %>
     <tr>
-      <td>2014/04/01</td>
-      <td><a href="post.html">This is longer.</a></td>
-      <td>John Doe</td>
-      <td>This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.</td>
+      <td><%= post.created_at %></td>
+      <td><%= link_to post.title, post_path(post) %></td>
+      <td><%=  post.author %></td>
+      <td><%= truncate(post.content, :length =>50) %></td>
     </tr>
-    <tr>
-     <td>2014/04/01</td>
-      <td>This is longer.</td>
-      <td>John Doe</td>
-      <td>This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.</td>
-    </tr>
-    <tr>
-     <td>2014/04/01</td>
-      <td>This is longer.</td>
-      <td>John Doe</td>
-      <td>This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.</td>
-    </tr>
-     <tr>
-     <td>2014/04/01</td>
-      <td>This is longer.</td>
-      <td>John Doe</td>
-      <td>This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.</td>
-    </tr>
-
-     <tr>
-     <td>2014/04/01</td>
-      <td>This is longer.</td>
-      <td>John Doe</td>
-      <td>This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.</td>
-    </tr>
-
-     <tr>
-     <td>2014/04/01</td>
-      <td>This is longer.</td>
-      <td>John Doe</td>
-      <td>This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.</td>
-    </tr>
-
-     <tr>
-     <td>2014/04/01</td>
-      <td>This is longer.</td>
-      <td>John Doe</td>
-      <td>This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.</td>
-    </tr>
-
-
-     <tr>
-     <td>2014/04/01</td>
-      <td>This is longer.</td>
-      <td>John Doe</td>
-      <td>This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.</td>
-    </tr>
+    <% end %>
   </tbody>
 </table>
 </div>

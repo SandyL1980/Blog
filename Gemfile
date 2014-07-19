@@ -13,6 +13,7 @@ gem 'high_voltage'
 gem 'thin'
 gem 'devise'
 gem 'kaminari'
+gem 'faker'
 
 
 group :development do
