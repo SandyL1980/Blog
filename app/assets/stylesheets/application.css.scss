@@ -14,6 +14,66 @@
  *= require_self
  */
 
+/*Layout variables*/
+ $margin: 10px;
+
  section {
  	margin: 0
  }
+
+.margin10 {
+	margin-top: $margin;
+ }
+.margin20 {
+	margin-top: $margin +10px;
+}
+.margin40 {
+	margin-top: $margin +30px;
+}
+
+/* === Blog ===*/ 
+.example-orbit-content {
+  background: #2BA6CB;
+}
+
+.blog .panel {
+  margin:0;
+  padding:0;
+  position: relative;
+}
+
+
+  /*to make the slider inherit the parent div's(the panel and the orbit-container) height*/
+  .blog .orbit-container ul, 
+  .blog .orbit-container li {
+
+     height: 320px;
+
+  }
+
+    .blog .orbit-container li {
+      padding: 10% 10% 0 10%;
+    }
+      .blog .orbit-container li:nth-child(odd){
+      /*different background color for every other featured blog post*/
+       background: #dedede;
+         
+      }
+
+      /*customization of the components*/
+      .orbit-container .orbit-slide-number {
+      color: #333333;
+
+      }
+        .orbit-container .orbit-next span{ 
+        border-left-style: #333333;
+        border-left-color: #333333;
+        }
+
+        .orbit-container .orbit-prev span {
+        border-right-style: #333333;
+        border-right-color: #333333;
+        }
+
+
+
