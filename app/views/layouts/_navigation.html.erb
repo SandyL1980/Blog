@@ -1,12 +1,29 @@
 <%# navigation styled for Zurb Foundation 5 %>
-<nav class="top-bar" data-topbar>
-  <ul class="title-area">
-    <li class="name"><%= link_to 'Home', root_path %></li>
-    <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
-  </ul>
-  <div class="top-bar-section">
-    <ul>
-      <%= render 'layouts/navigation_links' %>
-    </ul>
-  </div>
-</nav>
+ <nav class="top-bar" data-topbar>
+        <ul class="title-area">
+          <li class="name">
+            <h1><a href="#">Blog</a></h1>
+          </li>
+           <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+          <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+        </ul>
+
+        <section class="top-bar-section">
+          <!-- Right Nav Section -->
+          <ul class="right">
+            <li class="has-dropdown"><a id="btn_contact" href="#" title="contact">Contact</a>
+          
+
+            </li>
+            <li class="has-dropdown">
+              <a id="btn_signup" href="#" title="sign_up">Sign Up</a>
+            
+            </li>
+          </ul>
+
+          <!-- Left Nav Section -->
+          <ul class="left menu">
+            <li><a href="#" title="about">About</a></li>
+          </ul>
+        </section>
+      </nav>
