@@ -19,7 +19,7 @@
 
     <% @posts.each do |post| %>
     <tr>
-      <td><%= post.created_at %></td>
+      <td><%= post.created_at.strftime("%d %b. %Y") %></td>
       <td><%= link_to post.title, post_path(post) %></td>
       <td><%=  post.author %></td>
       <td><%= truncate(post.content, :length =>50) %></td>
@@ -37,47 +37,27 @@
     <div class="row">
       <h4 class="text-right">New!</h4>
         <div class="blog large-12 columns">
-           
+          
+         
            <ul class="example-orbit-content" data-orbit data-options="pause_on_hover:true;animation_speed:500; navigation_arrows:true;bullets:false;">
 
+            <% @most_recent_four.each do |new_post| %>
             <li data-orbit-slide="headline-1">
               <div>
-                   <h2>Headline 1</h2>
-                    <h3>Subheadline1</h3>
+                   <h3><%= new_post.title %></h3><hr>
 
                     <h6 class="subheader">
-                      Risus ligula, aliquam nec fermentum vitae, sollicitudin eget urna. Suspendisse ultrices ornare tempor...
+                      <%= truncate(new_post.content, :length =>90) %>es ornare tempor...
                     </h6>  
-               <a data-reveal-id="myModal" class="button tiny right radius" href="post.html">Read More</a><br>         
+               
+               <%= link_to 'Read More', post_path(new_post), class: 'button tiny radius right' %>
+               <br>         
               </div>
             </li>
-
-            <li data-orbit-slide="headline-1">
-              <div>
-                   <h2>Headline 1</h2>
-                    <h3>Subheadline1</h3>
-
-                    <h6 class="subheader">
-                      Risus ligula, aliquam nec fermentum vitae, sollicitudin eget urna. Suspendisse ultrices ornare tempor...
-                    </h6>  
-               <a data-reveal-id="myModal" class="button tiny right secondary radius" href="#">Read More</a><br>         
-              </div>
-            </li>
-
-            <li data-orbit-slide="headline-1">
-              <div>
-                   <h2>Headline 1</h2>
-                    <h3>Subheadline1</h3>
-
-                    <h6 class="subheader">
-                      Risus ligula, aliquam nec fermentum vitae, sollicitudin eget urna. Suspendisse ultrices ornare tempor...
-                    </h6>  
-               <a data-reveal-id="myModal" class="button tiny right radius" href="#">Read More</a><br>         
-              </div>
-            </li>
-
+               <% end %>
           </ul>
 
+        
         </div>
 
     </div><!-- row --><br>

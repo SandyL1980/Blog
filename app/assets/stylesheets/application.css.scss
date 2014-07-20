@@ -53,12 +53,13 @@
 
     .blog .orbit-container li {
       padding: 10% 10% 0 10%;
-    }
-      .blog .orbit-container li:nth-child(odd){
+  
+      &:nth-child(odd){
       /*different background color for every other featured blog post*/
        background: #dedede;
          
       }
+    }
 
       /*customization of the components*/
       .orbit-container .orbit-slide-number {
@@ -75,5 +76,61 @@
         border-right-color: #333333;
         }
 
+.indent {
+  margin-left: 30px;
+}
 
+.post {
+  position: relative;
+}
+
+.links {
+  position: absolute;
+  top: 20px;
+}
+
+.add {
+  margin-top: 17.64px;
+}
+
+#panel_contact {
+  background: #F5F5F5;
+  display: none;
+  padding: 2% 0;
+}
+
+#panel_signup {
+  background: #F5F5F5;
+  display: none;
+  padding: 4% 0;
+}
+
+form i {
+  position: absolute;
+  top:32.55814%;
+  color: #666;
+  font-size: 20px;
+  left: 5%;
+  z-index: 9999;
+
+}
+
+
+#panel_contact form input[type="text"], 
+#panel_signup form input[type="text"], 
+form input[type="email"],
+form input[type="password"]{
+  position: relative;
+  padding: 0 0 0 6%;
+}
+
+#review_form {
+  background: #eee;
+  padding: 4%;
+  display: none;
+}
+
+.alert-box.alert_review {
+  display: none;
+}
 
