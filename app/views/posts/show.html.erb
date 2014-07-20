@@ -1,19 +1,124 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
+<div class="row">
 
-<p>
-  <strong>Author:</strong>
-  <%= @post.author %>
-</p>
 
-<p>
-  <strong>Content:</strong>
-  <%= @post.content %>
-</p>
+     <div class="post large-8 columns">
+
+      <div class="links">
+      	<%= link_to  'All Posts', posts_path, class: 'button tiny radius'%>
+
+      	<%= link_to  'Add a Post', new_post_path, class: 'button tiny radius'%>
+     
+      </div>
+
+
+      <h2>&nbsp</h2>
+      <hr>
+      <h2>Post - title</h2>
+      <p><strong>Date:</strong> 2014, Jul 13  -  <strong>Author:</strong> John Doe </p>
+      <hr>
+      <br>
+
+      <p class="text-justify"><span class="indent"></span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+
+      <div class="row">
+
+
+        <div class="medium-12 columns">
+
+            <a href="" id="review" class="button round tiny right">Add a Review</a>
+
+            <div class="margin"></div>
+            <hr>
+
+              <div data-alert class="alert-box alert_review alert round">
+                 Oops! some Information is missing
+                  <a href="#" class="close">&times;</a>
+              </div>
+
+            <div id="review_form">
+
+                <form>
+                
+
+                <div class="row">
+                  <div class="large-12 columns">
+                    <label>Title:
+                      <input type="text" id="title" placeholder="Enter a Title" />
+                    </label>
+                  </div>
+                </div>
+
+                 <div class="row">
+                  <div class="large-12 columns">
+                    <label>Review:
+                      <textarea type="text" id="review_input" placeholder="Review" rows="4"/></textarea>
+                    </label>
+                  </div>
+                </div>
+
+             
+                <input type="submit" value="Add Review" class="button small tiny radius right"/>                   
+                
+
+              </form>
+
+            </div> <!-- review_form --> 
+
+        </div>
+
+
+      </div><!-- row  -->
+
+      
+  </div>
+ 
+
+<%= render 'sidebar' %>
+
+    </div><!-- row --><br>
+
+
+<hr>
+
+ <div class="row">
+
+        <div class="newsletter large-12 columns">
+          <h4>Sign Up to our Newsletter</h4>
+          <div class="panel callout">
+         
+           <form>
+            <div class="row">
+              <div class="large-12 columns">
+                <label>Email
+                  <input type="text" placeholder="enter email" />
+                </label>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="large-12 columns">    
+                  <input type="submit" class="button tiny right radius"/>   
+              </div>
+            </div>
+
+          </form>
+          </div>
+        </div>  
+      </div>
+
+    </div><!-- row -->
+  
+  </div><!--sidebar-->
+
+</div><!-- row -->
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
