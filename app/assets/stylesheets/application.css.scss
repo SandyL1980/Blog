@@ -10,9 +10,11 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
  *= require_self
+ *= require_tree .
  */
+
+@import "posts";
 
 /*Layout variables*/
  $margin: 10px;
@@ -136,4 +138,6 @@ form input[type="password"]{
 .alert-box.alert_review {
   display: none;
 }
+
+
 
