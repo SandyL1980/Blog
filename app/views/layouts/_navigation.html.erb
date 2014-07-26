@@ -11,14 +11,19 @@
         <section class="top-bar-section">
           <!-- Right Nav Section -->
           <ul class="right">
-            <li><a  href="#" title="contact" data-reveal-id="contact_us">Contact</a>
-          
-
-            </li>
-            <li>
-              <a id="btn_signup" href="" title="sign_up">Sign Up</a>
+            <li><a  href="#" title="contact" data-reveal-id="contact_us">Contact</a></li>
+        
+              <% if current_user %>
+                <li class="signed_in"><%= link_to "Signed in as #{current_user.first_name}", user_path(current_user) %></li>
+                <li><%= link_to "Profile Settings", user_path(current_user) %></li>
+                <li><%= link_to "Sign Out!", session_path("current"), method: :delete %></li>
+              <% else %>
+                <li><%= link_to "Log In", new_user_session_path %></li>
+                
+                <li><%= link_to "Sign Up!", new_user_path,  id: "btn_signup" %></li>
+                
+              <% end %>
             
-            </li>
           </ul>
 
           <!-- Left Nav Section -->
