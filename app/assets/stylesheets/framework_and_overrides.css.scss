@@ -1,6 +1,7 @@
 // import the CSS framework
 @import "foundation";
 @import "users";
+@import "posts";
 
 // override for the 'Home' navigation link
 .top-bar .name {
@@ -45,5 +46,4 @@ main {
   }
 section {
   @extend .row;
-  margin-top: 20px;
   }

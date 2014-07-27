@@ -21,32 +21,18 @@ $(document).ready(function() {
                                    
             });
 
-           var review_form = $('#review_form').children()
-           var review_form_btn = $('#review_form').children().children().eq(2)
-           var title = $('#title').val();
-           var review = $('#review_input').val();
-
-          
+           var review_form = $('#review_form').children();
+           var review_form_btn =  $('#review_form_btn');
+           var review = $('#review_comment').val();  
 
              review_form_btn.on('click',function(ev){
-                   
-                if ($('#title').val() == "") {
-                    $('#title').css('border', '1px solid red');
-                    $('#review_input').css('border', '1px solid red');
-                    $('#title').attr('placeholder', 'Please enter a title');
-                    $('.alert_review').fadeIn();
-                    ev.preventDefault();
-                } else if ($('#review_input').val() == "") {
-                    $('#title').css('border', '1px solid red');
-                    $('#review_input').css('border', '1px solid red');
-                    $('#review').attr('placeholder', 'Please enter a review');
+                       
+              if ($('#review_comment').val() == "") {       
+                    $('#review_comment').css('border', '1px solid red');
+                    $('#review_comment').attr('placeholder', 'Please enter a review');
                     $('.alert_review').fadeIn();
                     ev.preventDefault();                 
-                } else {
-                    review_form.text('Thank You for your review');
-                    $('.alert_review').hide();
-
-                }
+              } 
                                     
             });
 

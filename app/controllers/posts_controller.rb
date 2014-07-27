@@ -8,16 +8,21 @@ class PostsController < ApplicationController
     @most_recent_four = Post.most_recent_four
   end
 
-  # GET /posts/1
-  # GET /posts/1.json
-  def show
-     @most_recent_four = Post.most_recent_four
-  end
-
-  # GET /posts/new
   def new
     @post = Post.new
   end
+
+  # GET /posts/1
+  # GET /posts/1.json
+  def show
+     @post = Post.find(params[:id])
+     @review = @post.reviews.build
+     @most_recent_four = Post.most_recent_four
+     @reviews =  @post.reviews.all
+  end
+
+  # GET /posts/new
+  
 
   # GET /posts/1/edit
   def edit

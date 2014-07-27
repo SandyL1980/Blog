@@ -1,0 +1,24 @@
+<%= form_for([@post, @review]) do |f| %>
+        <% if @review.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
+
+            <ul>
+            <% @review.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="field row">
+          <div class="large-12 columns">
+            <%= f.label :comment %>
+            <%= f.text_area :comment, rows: '4' %>
+          </div>    
+        </div><br>
+
+        <div class="actions">
+          <%= f.submit class: 'button small tiny radius right', value: "Add Review", id: 'review_form_btn' %>
+        </div>
+      <% end %>

@@ -43,32 +43,11 @@
                   <a href="#" class="close">&times;</a>
               </div>
 
+
             <div id="review_form">
 
-                <form>
-                
-
-                <div class="row">
-                  <div class="large-12 columns">
-                    <label>Title:
-                      <input type="text" id="title" placeholder="Enter a Title" />
-                    </label>
-                  </div>
-                </div>
-
-                 <div class="row">
-                  <div class="large-12 columns">
-                    <label>Review:
-                      <textarea type="text" id="review_input" placeholder="Review" rows="4"/></textarea>
-                    </label>
-                  </div>
-                </div>
-
-             
-                <input type="submit" value="Add Review" class="button small tiny radius right"/>                   
-                
-
-              </form>
+  
+               <%= render 'reviews/form' %>
 
             </div> <!-- review_form --> 
 
@@ -76,16 +55,26 @@
         <div class="clearfix"></div>
 
 
-        <div class="large-12  columns" id="reviews">
+        <div class="large-12  columns panel" id="reviews">
+
+      
           <h3>Reviews</h3>
 
-            <p><img class="th" src="http://placehold.it/50x50/&text=avatar"><br><em>username</em><br><span>Added on: date</span></p>
+          <% @reviews.each do |review| %>
+            <p><img class="th" src="http://placehold.it/50x50/&text=avatar"><br><em><%= review.user.username %></em><br><span>Added on:  <%= review.created_at %></span></p>
+              <% if review.user != nil %>
+                  <p><%= review.comment %></p>
+               <% else %>
 
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut </p>
+                  <p>No review yet</p>
+              <% end %>
+              <hr>
 
-            <hr>
+              <% if current_user %>
+                  <p><% link_to "Be the first to add a review", new_post_review_path(@post) %></p>
+              <% end %>
+
+          <% end %>
         </div>  
 
 
@@ -106,7 +95,7 @@
 
         <div class="newsletter large-12 columns">
           <h4>Sign Up to our Newsletter</h4>
-          <div class="panel callout">
+          <div class="panel" id='reviews'>
          
            <form>
             <div class="row">

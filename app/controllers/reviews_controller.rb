@@ -1,17 +1,22 @@
 class ReviewsController < ApplicationController
+  before_action :set_review, only: [:show, :edit, :update, :destroy]
   before_filter :load_post
 
   def index
-
+     @reviews = Review.all
   end
 
   def show
-  	@review = Review.find(params[:id])
+  end
 
+  def new
+    @post = Post.find(params[:post_id])
+    @review = @post.reviews.build(review_params)
   end
 
 
   def create
+    @post = Post.find(params[:post_id])
   	@review = @post.reviews.build(review_params)
   	@review.user_id = current_user.id
 
@@ -25,7 +30,7 @@ class ReviewsController < ApplicationController
   def destroy
   	@review = Review.find(params[:id])
   	@review.destroy
-  	redirect_to restaurants_path
+  	redirect_to posts_path
   end
 
 
@@ -35,6 +40,12 @@ class ReviewsController < ApplicationController
   end
 
   private
+
+  def set_review
+      @review = Review.find(params[:id])
+  end
+
+
   def review_params
   	params.require(:review).permit(:comment, :post_id, :user_id)
   end

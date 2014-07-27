@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
-  resources :reviews
-
-  devise_for :users
   root to: 'posts#index'
 
-  resources :posts
+  devise_for :users
   resources :users
-
+  
+  resources :posts do
+  	resources :reviews
+  end
+ 
 end
