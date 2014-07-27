@@ -8,7 +8,7 @@
 
 
 
-10.times do |title, description, author|
+50.times do |title, description, author|
 
   title = Faker::Company.name
   content = Faker::Lorem.paragraph

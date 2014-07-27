@@ -4,8 +4,16 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
-    @most_recent_four = Post.most_recent_four
+
+
+    @posts = if params[:search]
+        Post.where("LOWER(title) LIKE LOWER(?)", "%#{params[:search]}%")
+      else
+        Post.all
+      end
+
+       @posts = @posts.order(created_at: :desc).page(params[:page])
+       @most_recent_four = Post.most_recent_four
   end
 
   def new
