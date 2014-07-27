@@ -14,6 +14,11 @@ class PostsController < ApplicationController
 
        @posts = @posts.order(created_at: :desc).page(params[:page])
        @most_recent_four = Post.most_recent_four
+       
+      respond_to do |format|
+        format.html
+        format.js
+      end
   end
 
   def new

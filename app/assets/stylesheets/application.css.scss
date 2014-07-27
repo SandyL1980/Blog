@@ -141,4 +141,17 @@ form input[type="password"]{
 }
 
 
+ul.pagination li.current a, 
+ul.pagination li.current button {
+display: block;
+padding: 0.0625rem 0.625rem 0.0625rem;
+color: #999999;
+background: #008cba!important;
+border-radius: 3px;
+font-weight: normal;
+font-size: 1em;
+line-height: inherit;
+transition: background-color 300ms ease-out;
+}
+
 

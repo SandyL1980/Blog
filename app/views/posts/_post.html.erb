@@ -1,0 +1,6 @@
+ <tr>
+      <td><%= post.created_at.strftime("%d %b. %Y") %></td>
+      <td><%= link_to post.title, post_path(post) %></td>
+      <td><%=  post.author %></td>
+      <td><%= truncate(post.content, :length =>50) %></td>
+    </tr>
