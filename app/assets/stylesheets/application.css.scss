@@ -136,8 +136,26 @@ form input[type="password"]{
   display: none;
 }
 
-.alert-box.alert_review {
+
+#review {
+  position: relative;
+}
+
+
+
+.alert-box.alert_review
+ {
   display: none;
+}
+
+.alert-box.notice_review {
+  position: absolute;
+  padding: 0.875rem 5rem 0.875rem 5rem;
+  z-index: 9999;
+  top: 0;
+  left:26.536731%;
+  margin: 0 auto;
+  display:none;
 }
 
 

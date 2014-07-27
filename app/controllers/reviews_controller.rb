@@ -16,15 +16,18 @@ class ReviewsController < ApplicationController
 
 
   def create
-    @post = Post.find(params[:post_id])
   	@review = @post.reviews.build(review_params)
   	@review.user_id = current_user.id
 
-  	if @review.save
-  		redirect_to post_path(@post), notice: "Thank you for your review"
- 	else
- 		render 'posts/show'
-  	end
+    respond_to do |format|
+    	if @review.save
+    		format.html {redirect_to post_path(@post), notice: "Thank you for your review"}
+   	    format.js  
+      else
+   		  format.html { render 'posts/show', alert: 'Error'}   
+    	  format.js
+      end
+    end
   end
 
   def destroy
