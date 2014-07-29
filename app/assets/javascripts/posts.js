@@ -27,12 +27,8 @@ $(document).ready(function() {
     if ($('#review_comment').val() == "") {       
           $('#review_comment').css('border', '1px solid red');
           $('#review_comment').attr('placeholder', 'Please enter a review');
-          $('.alert_review').fadeIn();
           ev.preventDefault();                 
-    } else {
-      $('#review_comment').text('Thank you for your review!');
-      $('.alert_review').hide();
-    }
+    } 
                           
   });
 
@@ -44,7 +40,6 @@ $(document).ready(function() {
             .attr('disabled', 'disabled');
             $('.alert_review').hide(); 
             $('.notice_review').fadeIn(300);
-            $('#review_form').slideUp(300);// disable the button
            
         })
         .on('ajax:complete', function() {
@@ -53,6 +48,7 @@ $(document).ready(function() {
             .removeAttr('disabled');     
         }, function(){
           $("#review_comment").val('');
+          // $('#review_form').slideUp(300);// disable the button
       });
   });
 

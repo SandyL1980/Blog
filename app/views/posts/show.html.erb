@@ -51,8 +51,13 @@
 
             <div id="review_form">
 
-  
+            <% if current_user %>
+    
                <%= render 'reviews/form' %>
+
+            <% else %>
+                <p>please <%= link_to 'log in', new_user_session_path %>  to add a review</p>
+            <% end %>
 
             </div> <!-- review_form --> 
 
