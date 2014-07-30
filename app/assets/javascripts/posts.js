@@ -4,8 +4,14 @@ $(document).ready(function() {
   $('#review').on('click',function(e){
       e.preventDefault()
       $('#review_form').slideToggle(300);
-      $('#review').text('Close Review');
-                         
+
+      if ($(this).text() == "Add Review") { 
+        $(this).text("Close Review"); 
+      } 
+        else { 
+        $(this).text("Add Review");
+      }; 
+           
   });
 
   var newsletter = $('.newsletter').find('input').eq(1)
@@ -26,6 +32,7 @@ $(document).ready(function() {
              
     if ($('#review_comment').val() == "") {       
           $('#review_comment').css('border', '1px solid red');
+          $('.alert_review').fadeIn(300);
           $('#review_comment').attr('placeholder', 'Please enter a review');
           ev.preventDefault();                 
     } 
@@ -48,7 +55,7 @@ $(document).ready(function() {
             .removeAttr('disabled');     
         }, function(){
           $("#review_comment").val('');
-          // $('#review_form').slideUp(300);// disable the button
+          $('#review_form').slideUp(300);// disable the button
       });
   });
 

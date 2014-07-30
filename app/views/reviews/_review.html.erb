@@ -1,5 +1,5 @@
 
-    <% if review.user != nil %>
+    <% if !review.user.nil? %>
   
         <p><img class="th" src="http://placehold.it/50x50/&text=avatar"><br><em>
         <%= review.user.username %></em><br><span>Added on:  <%= review.created_at %></span>
@@ -9,6 +9,8 @@
    <% else %>
 
       <p>No review yet</p>
+
+
         <% if current_user %>
           <p><% link_to "Be the first to add a review", new_post_review_path(@post) %></p>
         <% end %>
