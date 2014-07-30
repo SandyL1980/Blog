@@ -15,6 +15,15 @@
 //= require turbolinks
 //= require foundation
 //= require_tree .
+
+
+$(document).ready(function() {
+	var height = $(window).height();	
+    $('.container').css('height', height);
+				
+});
+
+
 $(function() {
   $(document).foundation();
 });

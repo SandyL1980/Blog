@@ -52,10 +52,11 @@ $(document).ready(function() {
         .on('ajax:complete', function() {
           $("input[type='submit']")
             .val('Add Review')
-            .removeAttr('disabled');     
+            .removeAttr('disabled');  
         }, function(){
           $("#review_comment").val('');
-          $('#review_form').slideUp(300);// disable the button
+          $('#review_form').slideUp(300);     
+          $("#review").text('Add Review');      
       });
   });
 

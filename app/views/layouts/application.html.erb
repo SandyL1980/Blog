@@ -11,22 +11,30 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <header>
-      <%= render 'layouts/navigation' %>
-    </header>
-      <%= render 'layouts/panel' %>
 
-    <main role="main">
-       <%= render 'layouts/messages' %>
-       <%= yield %>
+   <div class="container">
 
-       
-<footer class="text-center">
-  <hr>
-  <small>&copy; 2014 - All Right Reserved</small>
+        <header>
+          <%= render 'layouts/navigation' %>
+        </header>
+          <%= render 'layouts/panel' %>
 
-</footer>
+        <main role="main">
+           
+          <%= render 'layouts/messages' %>
+           
+          <%= yield %>
 
-    </main>
+             
+          <footer class="text-center">
+            <hr>
+            <small>&copy; 2014 - All Right Reserved</small>
+
+          </footer>
+
+        </main>
+    
+    </div>
+
   </body>
 </html>
